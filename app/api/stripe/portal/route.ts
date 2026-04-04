@@ -1,6 +1,6 @@
 import { auth } from "@clerk/nextjs/server";
 import { getAdminClient } from "@/lib/supabase";
-import { stripe } from "@/lib/stripe";
+import { getStripe } from "@/lib/stripe";
 
 export async function POST() {
   const { userId } = await auth();
@@ -21,7 +21,7 @@ export async function POST() {
 
   const baseUrl = process.env.NEXT_PUBLIC_URL ?? "http://localhost:3000";
 
-  const session = await stripe.billingPortal.sessions.create({
+  const session = await getStripe().billingPortal.sessions.create({
     customer: user.stripe_customer_id,
     return_url: `${baseUrl}/dashboard`,
   });

@@ -2,7 +2,7 @@ import { Webhook } from "svix";
 import { headers } from "next/headers";
 import { WebhookEvent } from "@clerk/nextjs/webhooks";
 import { getAdminClient } from "@/lib/supabase";
-import { stripe } from "@/lib/stripe";
+import { getStripe } from "@/lib/stripe";
 
 export async function POST(req: Request) {
   const webhookSecret = process.env.CLERK_WEBHOOK_SECRET;
@@ -47,6 +47,7 @@ export async function POST(req: Request) {
     const priceId = process.env.STRIPE_PRICE_SOLO_ID;
     if (priceId) {
       try {
+        const stripe = getStripe();
         const customer = await stripe.customers.create({
           email: primaryEmail,
           metadata: { clerk_user_id: id },
