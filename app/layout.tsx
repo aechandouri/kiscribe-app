@@ -5,7 +5,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Kiscribe — Notes kiné en 2 minutes | SOAPIE & codes AMK",
   description:
-    "Kiscribe génère vos notes SOAPIE et codes AMK en 90 secondes de dictée. L'outil IA conçu pour les kinésithérapeutes libéraux français.",
+    "Kiscribe génère vos notes SOAPIE et codes AMK en 45 secondes de dictée. L'outil IA conçu pour les kinésithérapeutes libéraux français.",
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",

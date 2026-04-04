@@ -108,7 +108,7 @@ export function Hero() {
           </h1>
 
           <p className="animate-appear animate-appear-d2 hero-sub">
-            Tu dictes 90 secondes après ta séance.
+            Tu dictes 45 secondes après ta séance.
             Kiscribe génère la note SOAPIE complète et le bon code AMK — prêt à coller dans Doctolib.
           </p>
 
@@ -124,7 +124,7 @@ export function Hero() {
 
           <div className="animate-appear animate-appear-d4 hero-stats">
             {[
-              { v: "90s", l: "par séance" },
+              { v: "45s", l: "par séance" },
               { v: "AMK ✓", l: "post-Avenant 7" },
               { v: "0", l: "app à installer" },
             ].map(({ v, l }, i) => (
@@ -185,7 +185,7 @@ export function Hero() {
               </div>
               <div>
                 <div className="mic-label">Dictée terminée</div>
-                <div className="mic-sub">90s enregistrées</div>
+                <div className="mic-sub">45s enregistrées</div>
               </div>
             </div>
 

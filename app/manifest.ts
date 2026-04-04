@@ -4,7 +4,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "Kiscribe",
     short_name: "Kiscribe",
-    description: "Notes SOAPIE et codes AMK en 90 secondes de dictée",
+    description: "Notes SOAPIE et codes AMK en 45 secondes de dictée",
     start_url: "/dashboard",
     display: "standalone",
     background_color: "#FAFAF8",

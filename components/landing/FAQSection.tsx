@@ -17,7 +17,7 @@ const FAQS = [
   },
   {
     q: "Je dicte devant mon patient ? Ça ne va pas être bizarre ?",
-    a: "Pas du tout — tu dictes après la séance, quand le patient est parti ou en salle d'attente. 90 secondes, une seule fois. La note SOAPIE est prête avant que le suivant arrive.",
+    a: "Pas du tout — tu dictes après la séance, quand le patient est parti ou en salle d'attente. 45 secondes, une seule fois. La note SOAPIE est prête avant que le suivant arrive.",
   },
   {
     q: "L'Avenant 7 va encore changer. Les codes seront toujours à jour ?",

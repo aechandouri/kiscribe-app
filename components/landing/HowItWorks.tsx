@@ -10,7 +10,7 @@ const STEPS = [
       </svg>
     ),
     title: "Tu parles",
-    description: "Décris la séance naturellement après ton patient. 60 à 90 secondes, sans structure particulière.",
+    description: "Décris la séance naturellement après ton patient. 60 à 45 secondes, sans structure particulière.",
     detail: "Vocabulaire kiné compris — lombalgie, renfo, EVA, psoas…",
   },
   {

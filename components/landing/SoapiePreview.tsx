@@ -22,7 +22,7 @@ export function SoapiePreview() {
             className="text-[2rem] leading-tight mb-3"
             style={{ fontFamily: "var(--font-serif)", color: "var(--color-text)" }}
           >
-            Ce que tu obtiens<br />après 90 secondes.
+            Ce que tu obtiens<br />après 45 secondes.
           </h2>
           <p className="text-sm max-w-xs mx-auto" style={{ color: "var(--color-text-muted)" }}>
             Note SOAPIE complète + code AMK. Prête à coller.
