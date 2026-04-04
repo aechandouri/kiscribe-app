@@ -1,0 +1,92 @@
+{
+  "schema_version": "1.0",
+  "founder": {
+    "name": "Abde",
+    "expertise": "AI agency owner, product builder, francophone B2B SaaS",
+    "background": "Runs a 300K/yr AI infrastructure agency targeting the US market. Coaches francophone entrepreneurs. Strong product instinct. Builds with Claude as coding agent."
+  },
+  "purpose": {
+    "who": "Kinésithérapeutes libéraux en France",
+    "problem": "Les kinés passent 2h+ par jour à rédiger leurs notes SOAPIE et choisir les bons codes AMK pour la télétransmission CPAM — du temps non rémunéré, non clinique, qui génère burnout et frustration.",
+    "transformation": "Passer de 2h de paperasse quotidienne à 2 minutes. Le kiné parle 90 secondes après chaque séance, l'outil génère la note SOAPIE complète en français + suggère le bon code AMK.",
+    "why_us": "Aucun outil français ne combine transcription vocale, structuration SOAPIE et suggestion de codes AMK dans une expérience mobile pensée pour le workflow du kiné libéral. Timing parfait post-Avenant 7 (juillet 2025) qui a bouleversé toute la nomenclature."
+  },
+  "product": {
+    "name": "Kiscribe",
+    "tagline": "Tes notes kiné en 2 minutes. Tu parles, on rédige.",
+    "how_it_works": "Le kiné ouvre l'app PWA sur son téléphone après la séance, appuie sur le bouton micro, décrit la séance en 60-90 secondes en langage naturel. Groq Whisper transcrit, Claude Haiku structure en note SOAPIE complète en français et suggère le code AMK approprié selon la nomenclature NGAP. Le kiné valide, copie-colle dans son logiciel existant (Doctolib Kiné, Topaze, etc.).",
+    "capabilities": [
+      "Transcription vocale française haute précision (Groq Whisper)",
+      "Génération automatique de note SOAPIE complète en français",
+      "Suggestion de code AMK avec justification (post-Avenant 7)",
+      "Historique des notes de la session (non stocké côté serveur en MVP)",
+      "Interface PWA installable sur iOS/Android — zéro App Store",
+      "Copier-coller en un tap vers le logiciel existant"
+    ],
+    "platform": "Web app PWA (Next.js, mobile-first)",
+    "differentiation": "Le seul outil français conçu spécifiquement pour le workflow post-séance du kiné libéral. Pas un logiciel de gestion de cabinet. Pas un généraliste médical. Un scribe spécialisé qui connaît les codes AMK, les termes kiné, et le format SOAPIE — directement utilisable depuis le couloir entre deux patients.",
+    "magic_moment": "La première fois que le kiné parle 90 secondes et voit une note SOAPIE parfaite apparaître, prête à coller dans Doctolib — et réalise qu'il vient de récupérer 2h de sa journée."
+  },
+  "audience": {
+    "primary": {
+      "name": "Marie, 34 ans, kiné libérale",
+      "description": "Kiné en cabinet libéral solo ou en maison de santé. 12-16 patients/jour. Utilise Doctolib pour ses rdv, carte CPS pour la télétransmission. Passe ses soirées à finir ses notes. A entendu parler de l'IA mais n'a jamais utilisé un outil IA pro. Fait confiance aux recommandations de ses collègues kinés.",
+      "frustrations": [
+        "2h/jour de notes non rémunérées après les séances",
+        "Confusion post-Avenant 7 sur les bons codes AMK à utiliser",
+        "Sentiment de gâcher ses compétences cliniques sur de l'administratif",
+        "Les logiciels de cabinet sont lourds, pas pensés pour le mobile"
+      ],
+      "alternatives": [
+        "Word/notes iPhone manuellement",
+        "Doctolib Kiné (gestion cabinet, pas génération de notes)",
+        "Dictée Siri basique (transcription brute, pas structurée)"
+      ]
+    },
+    "secondary": {
+      "name": "Cabinets de groupe (2-5 kinés)",
+      "description": "Le responsable du cabinet cherche à standardiser la documentation pour tout l'équipe."
+    }
+  },
+  "business": {
+    "revenue_model": "SaaS abonnement mensuel",
+    "pricing": {
+      "solo": "49€/mois — accès illimité, 1 praticien",
+      "cabinet": "99€/mois — jusqu'à 3 praticiens"
+    },
+    "goal_90_days": "50 clients payants, 2 450€ MRR",
+    "goal_6_months": "300 clients payants, 14 700€ MRR — amorcer le bouche-à-oreille dans les groupes kiné Facebook/WhatsApp",
+    "constraints": [
+      "Build solo avec Claude Code",
+      "Infra < 100€/mois en phase MVP",
+      "Ship MVP en 3-4 semaines",
+      "Mode stateless MVP — pas de stockage de données de santé côté serveur (évite HDS)"
+    ],
+    "gtm": "Groupes Facebook kinés libéraux, forums kinésithérapeutes.net, LinkedIn ciblé masseurs-kinésithérapeutes, DM direct à des kinés. Contenu éducatif sur l'Avenant 7 comme cheval de Troie."
+  },
+  "feeling": {
+    "personality": ["Précis", "Bienveillant", "Cliniquement crédible", "Moderne sans être techie"],
+    "visual_mood": "Warm professionnel — blanc cassé, vert sauge, accents dorés discrets. Reminiscent d'un cabinet bien tenu, pas d'une startup. Typographie soignée, espaces généreux, aucun élément superflu.",
+    "tone_of_voice": "Direct et sans jargon. Comme un collègue kiné qui t'explique un truc utile. Jamais condescendant, jamais trop enthousiasmé. Parle le langage du kiné, pas de la tech.",
+    "anti_patterns": [
+      "Aucun jargon IA ('LLM', 'modèle', 'intelligence artificielle' affiché partout)",
+      "Pas de dashboard surchargé",
+      "Pas de bleu médical générique",
+      "Pas de ton startup 'révolutionnaire'"
+    ]
+  },
+  "stack": {
+    "frontend": "Next.js 14 App Router + TypeScript + Tailwind CSS",
+    "backend": "Next.js API Routes (serverless)",
+    "database": "Supabase (auth + minimal user data — pas de données de santé en MVP)",
+    "auth": "Clerk",
+    "payments": "Stripe",
+    "ai_transcription": "Groq Whisper API",
+    "ai_generation": "Anthropic Claude Haiku 4.5",
+    "hosting": "Vercel",
+    "pwa": "next-pwa"
+  },
+  "tooling": {
+    "coding_agent": "Claude Code"
+  }
+}
