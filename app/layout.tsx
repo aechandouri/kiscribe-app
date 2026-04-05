@@ -29,6 +29,7 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="fr" className="h-full">
         <head>
+            <link rel="manifest" href="/manifest.json" />
           <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
         </head>
         <body className="min-h-full flex flex-col">{children}</body>

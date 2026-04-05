@@ -3,6 +3,7 @@ import { headers } from "next/headers";
 import { WebhookEvent } from "@clerk/nextjs/webhooks";
 import { getAdminClient } from "@/lib/supabase";
 import { getStripe } from "@/lib/stripe";
+import { sendWelcomeEmail } from "@/lib/email";
 
 export async function POST(req: Request) {
   const webhookSecret = process.env.CLERK_WEBHOOK_SECRET;
@@ -87,6 +88,12 @@ export async function POST(req: Request) {
     if (error) {
       console.error("Error inserting user:", error);
       return new Response("Database error", { status: 500 });
+    }
+
+    if (primaryEmail && trialEndsAt) {
+      sendWelcomeEmail(primaryEmail, new Date(trialEndsAt)).catch((err) =>
+        console.error("Welcome email error:", err)
+      );
     }
   }
 

@@ -1,0 +1,24 @@
+{
+  "name": "Kiscribe",
+  "short_name": "Kiscribe",
+  "description": "Notes SOAPIE et codes AMK en 45 secondes de dictée",
+  "start_url": "/dashboard",
+  "display": "standalone",
+  "background_color": "#F7F5F0",
+  "theme_color": "#5C7A5F",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
