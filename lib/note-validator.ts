@@ -175,6 +175,9 @@ const AMK_JUSTIFICATION_CLEANUP: RegExp[] = [
   /[,\s]*hors conditions?\s+AMK\s*14[^.)]*\.?/gi,
   /[,\s]*ne relevant pas (de l[' ]|d[' ])?AMK\s*14[^.)]*\.?/gi,
   /[,\s]*relevant de la r[eé][eé]ducation m[eé]canique simple[^.)]*\.?/gi,
+  /[,\s]*sans ant[eé]c[eé]dent (chirurgical|op[eé]ratoire)[^.)]*\.?/gi,
+  /[,\s]*sans (chirurgie|op[eé]ration|post[- ]?op)[^.)]*\.?/gi,
+  /[,\s]*non[- ]op[eé]r[eé]e?[^.)]*\.?/gi,
 ];
 
 export function stripMetaCommentary(text: string): string {
