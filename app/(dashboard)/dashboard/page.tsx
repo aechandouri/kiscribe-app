@@ -127,14 +127,23 @@ export default function DashboardPage() {
             onClick={handleMicClick}
           />
           {pageState === "recording" && (
-            <div className="flex items-center gap-2">
-              <span
-                className="w-2 h-2 rounded-full animate-pulse"
-                style={{ backgroundColor: "var(--color-recording)" }}
-              />
-              <span className="text-sm font-mono" style={{ color: "var(--color-recording)" }}>
-                {formatDuration(recorder.duration)}
-              </span>
+            <div className="flex flex-col items-center gap-3">
+              <div className="flex items-center gap-2">
+                <span
+                  className="w-2 h-2 rounded-full animate-pulse"
+                  style={{ backgroundColor: "var(--color-recording)" }}
+                />
+                <span className="text-sm font-mono" style={{ color: "var(--color-recording)" }}>
+                  {formatDuration(recorder.duration)}
+                </span>
+              </div>
+              <button
+                onClick={handleNewNote}
+                className="text-xs px-3 py-1.5 rounded-lg border transition-colors"
+                style={{ color: "var(--color-text-muted)", borderColor: "var(--color-border)" }}
+              >
+                Annuler
+              </button>
             </div>
           )}
           {pageState === "error" && error && (
