@@ -49,7 +49,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         </span>
 
         <div className="flex items-center gap-3">
-          <UserButton afterSignOutUrl="/" />
+          <UserButton />
           <div className="relative">
             <button
               onClick={() => setMenuOpen((v) => !v)}
