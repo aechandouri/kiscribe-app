@@ -102,6 +102,10 @@ const EXPLICIT_AMK75_TRIGGERS: RegExp[] = [
   /cervicalgie commune/i,
   /entorse bénigne/i,
   /tendinopathie (simple|commune)/i,
+  // Coiffe non opérée — évite le faux positif "sans chirurgie" qui contient "chir"
+  /coiffe.{0,80}sans (chirurgie|op[eé]r)/i,
+  /coiffe.{0,80}non[- ]op[eé]r/i,
+  /(sans (chirurgie|opération|post[- ]?op)|non[- ]op[eé]r[eé]e?)\b/i,
 ];
 
 export function validateAmkCode(transcript: string, suggestedCode: string): {
@@ -124,11 +128,20 @@ export function validateAmkCode(transcript: string, suggestedCode: string): {
         };
       }
     } else if (suggestedCode !== "AMK 14") {
-      return {
-        code: "AMK 14",
-        justification: "Acte spécialisé selon nomenclature NGAP.",
-        corrected: true,
-      };
+      // Générer une justification contextuelle selon ce qui a déclenché AMK 14
+      let justification = "Acte de rééducation spécialisée.";
+      if (/post[- ]?op[ée]r|arthroscop|proth[eè]se|\bPTH\b|\bPTG\b|ligamentoplastie|discectomie|laminectomie|arthrodèse/i.test(transcript)) {
+        justification = "Rééducation post-opératoire — acte spécialisé.";
+      } else if (/vestibulaire|VPPB|vertige|Epley|Sémont|Dix-Hallpike/i.test(transcript)) {
+        justification = "Rééducation vestibulaire.";
+      } else if (/périnéal|pelvi|incontinence|prolapsus/i.test(transcript)) {
+        justification = "Rééducation périnéale et pelvi-périnéale.";
+      } else if (/respiratoire|BPCO|mucoviscidose/i.test(transcript)) {
+        justification = "Rééducation respiratoire spécialisée.";
+      } else if (/oncolog|lymphœdème|cancer|chimio|radiothérapie/i.test(transcript)) {
+        justification = "Rééducation oncologique.";
+      }
+      return { code: "AMK 14", justification, corrected: true };
     }
   }
 
