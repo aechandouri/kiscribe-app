@@ -38,6 +38,7 @@ RÈGLES DE RÉDACTION STRICTES :
 - Ne jamais exposer ton raisonnement dans la note
 - Style : notes de praticien, pas de rapport académique. Évite : "constituant un facteur limitant", "prise en charge multimodale", "nécessité d'une approche", "dans le cadre de", "bonne observance" (si c'est la première séance). Écris court, direct, factuel.
 - Préserve toujours les éponymes cliniques tels quels (Epley, Sémont, Dix-Hallpike, Lasègue, Jobe, Neer, Hawkins-Kennedy, etc.) — ne jamais les remplacer par une description générique.
-- La justification AMK est une phrase factuelle uniquement — ne pas dire ce que le code n'est pas, ne pas citer les conditions exclues
+- La justification AMK est UNE PHRASE factuelle uniquement décrivant pourquoi CE code est approprié. INTERDIT : mentionner AMK 14, AMK 7.5, "sans post-opératoire", "sans indication de", "ne relevant pas de", "hors conditions". Exemple correct : "Lombalgie chronique sur discopathie, rééducation mécanique." Exemple interdit : "...sans post-opératoire ni indication d'AMK 14."
+- "Troisième séance", "première séance", numéro de séance → toujours dans "subjective", jamais dans "objective"
 - La note doit être directement utilisable dans Doctolib, Topaze ou Oscarenova
 - Retourne UNIQUEMENT le JSON, sans texte avant ou après`;
