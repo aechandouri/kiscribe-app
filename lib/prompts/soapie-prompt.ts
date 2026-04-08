@@ -4,12 +4,12 @@ Ta tâche est de structurer cette description en note SOAPIE complète et de sug
 
 FORMAT DE SORTIE (JSON strict) :
 {
-  "subjective": "Ce que rapporte le patient : douleurs, évolution, ressenti. Rédige uniquement avec les informations présentes.",
-  "objective": "Ce que le kiné a observé et mesuré : amplitudes, tests, évaluations. Rédige uniquement avec les informations présentes.",
+  "subjective": "Ce que rapporte le patient : âge, diagnostic, numéro de séance, douleurs, évolution, ressenti. Rédige uniquement avec les informations présentes.",
+  "objective": "Ce que le kiné a OBSERVÉ et MESURÉ uniquement : amplitudes articulaires, bilans musculaires, tests orthopédiques (Jobe, Lasègue...), état local (œdème, chaleur, cicatrice). NE PAS inclure les actes réalisés ni la tolérance — ceux-ci vont dans intervention et évaluation.",
   "analysis": "Interprétation clinique : diagnostic kiné, évolution, problèmes identifiés.",
   "plan": "Objectifs et programme : fréquence, durée, axes thérapeutiques.",
-  "intervention": "Actes réalisés lors de cette séance : techniques, durées, paramètres.",
-  "evaluation": "Résultats observés en fin de séance : tolérance, douleur si renseignée, progression. Ne jamais mentionner l'absence de données.",
+  "intervention": "Actes réalisés lors de CETTE séance UNIQUEMENT : toutes les techniques, mobilisations, exercices, drainages effectués. Ne rien mettre ici qui n'a pas été fait aujourd'hui.",
+  "evaluation": "Résultats observés EN FIN DE SÉANCE : tolérance, EVA finale si renseignée, progression constatée. Ne jamais mentionner l'absence de données ni l'absence de complications.",
   "amk_code": "ex: AMK 7.5",
   "amk_justification": "Une phrase courte et factuelle, sans justification défensive."
 }
@@ -39,6 +39,8 @@ RÈGLES DE RÉDACTION STRICTES :
 - Style : notes de praticien, pas de rapport académique. Évite : "constituant un facteur limitant", "prise en charge multimodale", "nécessité d'une approche", "dans le cadre de", "bonne observance" (si c'est la première séance). Écris court, direct, factuel.
 - Préserve toujours les éponymes cliniques tels quels (Epley, Sémont, Dix-Hallpike, Lasègue, Jobe, Neer, Hawkins-Kennedy, etc.) — ne jamais les remplacer par une description générique.
 - La justification AMK est UNE PHRASE factuelle uniquement décrivant pourquoi CE code est approprié. INTERDIT absolu : "sans chirurgie", "sans antécédent chirurgical", "sans post-opératoire", "sans indication", "ne relevant pas de", "hors conditions", tout mot "sans" ou "non" suivi d'une condition clinique. Exemples corrects : "Tendinopathie de coiffe, rééducation fonctionnelle." / "Lombalgie chronique sur discopathie, rééducation mécanique." / "Rééducation post-opératoire prothèse de hanche." Exemples INTERDITS : "...sans antécédent chirurgical" / "...sans indication d'AMK 14".
-- "Troisième séance", "première séance", numéro de séance → toujours dans "subjective", jamais dans "objective"
+- Numéro de séance, âge, diagnostic → toujours dans "subjective"
+- SÉPARATION O/I STRICTE : objective = mesures et observations passives. intervention = tout ce que le kiné a fait activement. Exemple interdit dans O : "Drainage réalisé", "Mobilisations effectuées", "Tolérance bonne". Ces éléments vont en I et E.
+- "Pas de complication", "aucune douleur", "sans incident" → INTERDIT dans évaluation. Écrire uniquement ce qui est positif et observé.
 - La note doit être directement utilisable dans Doctolib, Topaze ou Oscarenova
 - Retourne UNIQUEMENT le JSON, sans texte avant ou après`;
